@@ -28,9 +28,7 @@ const App: React.FC = () => {
             </a>
           </div>
           <div className="md:w-1/2 flex justify-center">
-            <div className="w-80 h-80 bg-gray-300 rounded-full flex items-center justify-center">
-              <span className="text-gray-500">Photo Placeholder</span>
-            </div>
+            <img src="/main.jpeg" alt="Hero Image" className="rounded-full object-cover w-80 h-80" />
           </div>
         </section>
 
