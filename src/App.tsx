@@ -3,6 +3,7 @@ import React from 'react';
 const App: React.FC = () => {
   return (
     <div className="bg-gray-100 min-h-screen">
+      <header className="bg-white shadow">
         <div className="container mx-auto px-6 py-4 text-center">
           <h1 className="text-3xl font-bold text-gray-800">FREESTYLE - Women’s Edition</h1>
           <p className="text-xl text-gray-600">תהליך עומק, אימפרוביזציה ופריסטייל ראפ לנשים</p>
@@ -11,7 +12,7 @@ const App: React.FC = () => {
 
       <main className="container mx-auto px-6 py-10">
         {/* Hero Section */}
-        <section className="flex flex-col md:flex-row-reverse items-center justify-between mb-12">
+        <section className="flex flex-col md:flex-row items-center justify-between mb-12">
           <div className="md:w-1/2 mb-8 md:mb-0 text-center">
             <h2 className="text-4xl font-bold text-gray-800 leading-tight mb-4">
               שחררי את הקול שלך, תמצאי את הזרימה
@@ -36,7 +37,7 @@ const App: React.FC = () => {
         {/* Bio Section */}
         <section className="bg-white rounded-lg shadow p-8">
           <h3 className="text-2xl font-bold text-gray-800 mb-4">מי אני?</h3>
-          <div className="flex flex-col md:flex-row-reverse items-center">
+          <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/3 flex justify-center mb-6 md:mb-0">
                <div className="w-48 h-48 bg-gray-300 rounded-full flex items-center justify-center">
                    <span className="text-gray-500">Dar's Photo</span>
