@@ -1,4 +1,4 @@
-import React, { type ReactNode } from 'react';
+import React, { type ReactNode, useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { FaWhatsapp, FaEnvelope } from 'react-icons/fa';
 
@@ -26,16 +26,37 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({ children }) => {
 
 
 const App: React.FC = () => {
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  const handleScroll = () => {
+    const currentScrollPos = window.pageYOffset;
+    setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+    setPrevScrollPos(currentScrollPos);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [prevScrollPos, visible, handleScroll]);
+
   return (
     <div className="bg-purple-50 font-sans text-gray-800">
-      <header className="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
-        <div className="container mx-auto px-6 py-2 text-center">
-          <h1 className="text-2xl font-semibold text-gray-800">FREESTYLE - Women’s Edition</h1>
-          <nav className="flex justify-center gap-4 md:gap-8 mt-2">
-            <a href="#about" className="text-gray-600 hover:text-violet-500 transition duration-300">מה בקורס?</a>
-            <a href="#why-rap" className="text-gray-600 hover:text-violet-500 transition duration-300">למה ראפ?</a>
-            <a href="#who-for" className="text-gray-600 hover:text-violet-500 transition duration-300">למי זה מתאים?</a>
-            <a href="#contact" className="text-gray-600 hover:text-violet-500 transition duration-300">מי אנחנו?</a>
+      <header
+        className={`bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-all duration-300 h-auto ${
+          visible ? 'top-0' : '-top-40'
+        }`}
+      >
+        <div className="container mx-auto px-6 py-2 flex flex-col">
+          <div className="flex justify-between items-center w-full">
+            <img src="/logo.png" alt="FREESTYLE - Women’s Edition" className="h-24 w-24 rounded-full" />
+            <h1 className="text-2xl font-semibold text-gray-800 flex-grow text-center">FREESTYLE - Women’s Edition</h1>
+          </div>
+          <nav className="flex justify-center gap-4 md:gap-8 mt-2 w-full">
+            <a href="#about" className="text-gray-600 hover:text-violet-500 transition duration-300">מה בקורס</a>
+            <a href="#why-rap" className="text-gray-600 hover:text-violet-500 transition duration-300">למה ראפ</a>
+            <a href="#who-for" className="text-gray-600 hover:text-violet-500 transition duration-300">למי זה מתאים</a>
+            <a href="#contact" className="text-gray-600 hover:text-violet-500 transition duration-300">מי אנחנו</a>
           </nav>
         </div>
       </header>
