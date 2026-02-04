@@ -58,8 +58,17 @@ const App: React.FC = () => {
     }
   };
 
+  const scrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
-    <div className="bg-gradient-to-br from-purple-50 via-pink-50 to-violet-50 font-sans text-gray-800 min-h-screen">
+    <div id="top" className="bg-gradient-to-br from-purple-50 via-pink-50 to-violet-50 font-sans text-gray-800 min-h-screen">
       {/* Modern Header with Glassmorphism */}
       <header
         ref={headerRef}
@@ -70,70 +79,74 @@ const App: React.FC = () => {
         <div className="bg-white/70 backdrop-blur-xl shadow-lg border-b border-white/20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-20 lg:h-24">
-              {/* Logo */}
-              <div className="flex items-center gap-3">
-                <img
-                  src="/logo.png"
-                  alt="FREESTYLE - Women's Edition"
-                  className="h-14 w-14 lg:h-16 lg:w-16 rounded-full object-cover shadow-lg ring-2 ring-purple-200 hover:ring-purple-400 transition-all duration-300 hover:scale-105"
-                />
-                <h1 className="hidden sm:block text-lg lg:text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  FREESTYLE
-                </h1>
-              </div>
+              {/* Mobile Menu Button - Left Side */}
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="lg:hidden p-2 text-gray-700 hover:text-purple-300 transition-colors duration-300"
+                aria-label="תפריט"
+              >
+                {mobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+              </button>
 
-              {/* Desktop Navigation */}
+              {/* Desktop Navigation - Center/Left */}
               <nav className="hidden lg:flex items-center gap-2">
                 <a
                   href="#about"
                   onClick={(e) => smoothScroll(e, 'about')}
-                  className="group relative px-5 py-2.5 text-gray-700 hover:text-purple-600 transition-all duration-300 font-medium"
+                  className="group relative px-5 py-2.5 text-gray-700 hover:text-purple-400 transition-all duration-300 font-medium"
                 >
                   <span className="relative z-10">מה בקורס</span>
-                  <div className="absolute inset-0 bg-purple-100 rounded-xl scale-0 group-hover:scale-100 transition-transform duration-300"></div>
+                  <div className="absolute inset-0 bg-purple-50 rounded-xl scale-0 group-hover:scale-100 transition-transform duration-300"></div>
                 </a>
                 <a
                   href="#why-rap"
                   onClick={(e) => smoothScroll(e, 'why-rap')}
-                  className="group relative px-5 py-2.5 text-gray-700 hover:text-purple-600 transition-all duration-300 font-medium"
+                  className="group relative px-5 py-2.5 text-gray-700 hover:text-purple-400 transition-all duration-300 font-medium"
                 >
                   <span className="relative z-10">למה ראפ</span>
-                  <div className="absolute inset-0 bg-purple-100 rounded-xl scale-0 group-hover:scale-100 transition-transform duration-300"></div>
+                  <div className="absolute inset-0 bg-purple-50 rounded-xl scale-0 group-hover:scale-100 transition-transform duration-300"></div>
                 </a>
                 <a
                   href="#who-for"
                   onClick={(e) => smoothScroll(e, 'who-for')}
-                  className="group relative px-5 py-2.5 text-gray-700 hover:text-purple-600 transition-all duration-300 font-medium"
+                  className="group relative px-5 py-2.5 text-gray-700 hover:text-purple-400 transition-all duration-300 font-medium"
                 >
                   <span className="relative z-10">למי זה מתאים</span>
-                  <div className="absolute inset-0 bg-purple-100 rounded-xl scale-0 group-hover:scale-100 transition-transform duration-300"></div>
+                  <div className="absolute inset-0 bg-purple-50 rounded-xl scale-0 group-hover:scale-100 transition-transform duration-300"></div>
                 </a>
                 <a
                   href="#contact"
                   onClick={(e) => smoothScroll(e, 'contact')}
-                  className="group relative px-5 py-2.5 text-gray-700 hover:text-purple-600 transition-all duration-300 font-medium"
+                  className="group relative px-5 py-2.5 text-gray-700 hover:text-purple-400 transition-all duration-300 font-medium"
                 >
                   <span className="relative z-10">מי אנחנו</span>
-                  <div className="absolute inset-0 bg-purple-100 rounded-xl scale-0 group-hover:scale-100 transition-transform duration-300"></div>
+                  <div className="absolute inset-0 bg-purple-50 rounded-xl scale-0 group-hover:scale-100 transition-transform duration-300"></div>
                 </a>
                 <a
                   href="https://wa.me/972547534071?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%9C%D7%92%D7%91%D7%99%20%D7%A7%D7%95%D7%A8%D7%A1%20%D7%A4%D7%A8%D7%99%D7%A1%D7%98%D7%99%D7%99%D7%9C%20%D7%9C%D7%A0%D7%A9%D7%99%D7%9D"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mr-2 px-6 py-2.5 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                  className="mr-2 px-6 py-2.5 bg-gradient-to-r from-purple-300 to-pink-300 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
                 >
                   הצטרפי עכשיו
                 </a>
               </nav>
 
-              {/* Mobile Menu Button */}
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 text-gray-700 hover:text-purple-600 transition-colors duration-300"
-                aria-label="תפריט"
+              {/* Logo - Right Side */}
+              <a
+                href="#top"
+                onClick={scrollToTop}
+                className="flex items-center gap-3 cursor-pointer"
               >
-                {mobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-              </button>
+                <h1 className="hidden sm:block text-lg lg:text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  FREESTYLE
+                </h1>
+                <img
+                  src="/logo.png"
+                  alt="FREESTYLE - Women's Edition"
+                  className="h-14 w-14 lg:h-16 lg:w-16 rounded-full object-cover shadow-lg ring-2 ring-purple-200 hover:ring-purple-300 transition-all duration-300 hover:scale-105"
+                />
+              </a>
             </div>
           </div>
         </div>
@@ -148,28 +161,28 @@ const App: React.FC = () => {
             <a
               href="#about"
               onClick={(e) => smoothScroll(e, 'about')}
-              className="px-4 py-3 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-xl transition-all duration-300 font-medium text-center"
+              className="px-4 py-3 text-gray-700 hover:text-purple-400 hover:bg-purple-50 rounded-xl transition-all duration-300 font-medium text-center"
             >
               מה בקורס
             </a>
             <a
               href="#why-rap"
               onClick={(e) => smoothScroll(e, 'why-rap')}
-              className="px-4 py-3 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-xl transition-all duration-300 font-medium text-center"
+              className="px-4 py-3 text-gray-700 hover:text-purple-400 hover:bg-purple-50 rounded-xl transition-all duration-300 font-medium text-center"
             >
               למה ראפ
             </a>
             <a
               href="#who-for"
               onClick={(e) => smoothScroll(e, 'who-for')}
-              className="px-4 py-3 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-xl transition-all duration-300 font-medium text-center"
+              className="px-4 py-3 text-gray-700 hover:text-purple-400 hover:bg-purple-50 rounded-xl transition-all duration-300 font-medium text-center"
             >
               למי זה מתאים
             </a>
             <a
               href="#contact"
               onClick={(e) => smoothScroll(e, 'contact')}
-              className="px-4 py-3 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-xl transition-all duration-300 font-medium text-center"
+              className="px-4 py-3 text-gray-700 hover:text-purple-400 hover:bg-purple-50 rounded-xl transition-all duration-300 font-medium text-center"
             >
               מי אנחנו
             </a>
@@ -177,7 +190,7 @@ const App: React.FC = () => {
               href="https://wa.me/972547534071?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%9C%D7%92%D7%91%D7%99%20%D7%A7%D7%95%D7%A8%D7%A1%20%D7%A4%D7%A8%D7%99%D7%A1%D7%98%D7%99%D7%99%D7%9C%20%D7%9C%D7%A0%D7%A9%D7%99%D7%9D"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-semibold text-center shadow-lg hover:shadow-xl transition-all duration-300"
+              className="px-4 py-3 bg-gradient-to-r from-purple-300 to-pink-300 text-white rounded-xl font-semibold text-center shadow-lg hover:shadow-xl transition-all duration-300"
             >
               הצטרפי עכשיו
             </a>
@@ -195,24 +208,24 @@ const App: React.FC = () => {
             id="hero"
             className="relative mb-16 lg:mb-24 rounded-3xl overflow-hidden shadow-2xl"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-900/90 via-pink-800/90 to-violet-900/90"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-400/90 via-pink-300/90 to-violet-400/90"></div>
             <div
               className="absolute inset-0 bg-cover bg-center opacity-30"
               style={{ backgroundImage: 'url(/main.jpeg)' }}
             ></div>
 
-            <div className="relative z-10 px-6 sm:px-10 lg:px-16 py-16 lg:py-24">
+            <div className="relative z-10 px-6 sm:px-10 lg:px-16 py-16 lg:py-24 text-center">
               {/* Title */}
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 drop-shadow-lg">
                 FREESTYLE
                 <br />
-                <span className="bg-gradient-to-r from-pink-300 to-violet-300 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-pink-200 to-violet-200 bg-clip-text text-transparent">
                   women's edition
                 </span>
               </h2>
 
               {/* Subtitle */}
-              <p className="text-xl sm:text-2xl font-bold text-pink-200 mb-8 animate-pulse">
+              <p className="text-2xl sm:text-3xl font-extrabold text-white mb-8 animate-pulse drop-shadow-[0_0_15px_rgba(255,255,255,0.8)] bg-gradient-to-r from-pink-400/30 to-violet-400/30 backdrop-blur-sm rounded-2xl py-4 px-6 inline-block border-2 border-white/40">
                 לחצו והצטרפו אלינו!
               </p>
 
@@ -271,7 +284,7 @@ const App: React.FC = () => {
         <AnimatedSection delay={100}>
           <section id="about" className="mb-16 lg:mb-24 scroll-mt-28">
             <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl p-8 sm:p-10 lg:p-16 border border-white/20">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text mb-8 text-center">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text mb-8 text-center">
                 אז מה קורה בקורס בעצם?
               </h2>
 
@@ -324,13 +337,13 @@ const App: React.FC = () => {
 
         {/* Logo Divider */}
         <AnimatedSection delay={200}>
-          <section id="logo-section" className="my-16 lg:my-24 flex justify-center">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full blur-2xl opacity-30 animate-breathe"></div>
+          <section id="logo-section" className="my-16 lg:my-24 flex justify-center overflow-hidden">
+            <div className="relative animate-slide-in">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full blur-3xl opacity-30 animate-breathe"></div>
               <img
                 src="/logo.png"
                 alt="FREESTYLE - Women's Edition"
-                className="relative h-32 w-32 sm:h-40 sm:w-40 lg:h-48 lg:w-48 rounded-full object-cover shadow-2xl ring-4 ring-white/50 animate-breathe"
+                className="relative h-48 w-48 sm:h-56 sm:w-56 lg:h-72 lg:w-72 rounded-full object-cover shadow-2xl ring-4 ring-white/50 animate-breathe"
               />
             </div>
           </section>
@@ -340,7 +353,7 @@ const App: React.FC = () => {
         <AnimatedSection delay={100}>
           <section id="why-rap" className="mb-16 lg:mb-24 scroll-mt-28">
             <div className="max-w-4xl mx-auto text-right">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text mb-8 text-center">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text mb-8 text-center">
                 למה פריסטייל ראפ?
               </h2>
 
@@ -380,7 +393,7 @@ const App: React.FC = () => {
         <AnimatedSection delay={200}>
           <section className="mb-16 lg:mb-24">
             <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl p-8 sm:p-10 lg:p-16 border border-white/20">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text mb-8 text-center">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text mb-8 text-center">
                 למה רק נשים?
               </h2>
 
@@ -408,7 +421,7 @@ const App: React.FC = () => {
         <AnimatedSection delay={100}>
           <section id="who-for" className="mb-16 lg:mb-24 scroll-mt-28">
             <div className="max-w-4xl mx-auto text-right">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-pink-600 to-violet-600 bg-clip-text mb-8 text-center">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-pink-400 to-violet-400 bg-clip-text mb-8 text-center">
                 למי הקורס מתאים?
               </h2>
 
@@ -417,7 +430,7 @@ const App: React.FC = () => {
                   נשים שעובדים עם ומול א.נשים. מנהלות, יזמיות, מובילות תחום, מנחות קבוצות, מנהלות משאבי אנוש או כל מי שרוצה לשפר את יכולות הביטוי העצמי, לתפוס יותר מקום במרחב ולתקשר את עצמן בביטחון גבוה.
                 </p>
 
-                <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-8 shadow-2xl">
+                <div className="bg-gradient-to-r from-purple-300 to-pink-300 rounded-2xl p-8 shadow-2xl">
                   <p className="text-lg sm:text-xl text-white leading-relaxed font-semibold text-center">
                     אם נמאס לך לעצור את עצמך מלדבר בישיבה, להגיד מה שאת חושבת ולהציע רעיונות כי הם לא "מושלמים" או "מדויקים", הזמן לעבוד על זה הוא עכשיו.
                   </p>
@@ -431,35 +444,35 @@ const App: React.FC = () => {
         <AnimatedSection delay={200}>
           <section className="mb-16 lg:mb-24">
             <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl p-8 sm:p-10 lg:p-16 border border-white/20">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text mb-12 text-center">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text mb-12 text-center">
                 מהלך המפגשים
               </h2>
 
               <div className="max-w-4xl mx-auto space-y-6">
-                <div className="relative pr-8 pb-8 border-r-4 border-purple-300">
-                  <div className="absolute -right-3 top-0 w-6 h-6 bg-purple-500 rounded-full ring-4 ring-purple-200"></div>
+                <div className="relative pr-8 pb-8 border-r-4 border-purple-200">
+                  <div className="absolute -right-3 top-0 w-6 h-6 bg-purple-300 rounded-full ring-4 ring-purple-100"></div>
                   <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
-                    <div className="text-purple-600 font-bold text-xl mb-3">מפגש 1</div>
+                    <div className="text-purple-400 font-bold text-xl mb-3">מפגש 1</div>
                     <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-right">
                       היכרות ויצירת בסיס בטוח לעבודה משותפת. היכרות עם כלים בסיסיים מעולמות האימפרוביזציה וכניסה למרחב האלתור בקצב - פריסטייל ראפ. בואי לגלות את הראפרית הפנימית שלך!
                     </p>
                   </div>
                 </div>
 
-                <div className="relative pr-8 pb-8 border-r-4 border-pink-300">
-                  <div className="absolute -right-3 top-0 w-6 h-6 bg-pink-500 rounded-full ring-4 ring-pink-200"></div>
+                <div className="relative pr-8 pb-8 border-r-4 border-pink-200">
+                  <div className="absolute -right-3 top-0 w-6 h-6 bg-pink-300 rounded-full ring-4 ring-pink-100"></div>
                   <div className="bg-gradient-to-br from-pink-50 to-violet-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
-                    <div className="text-pink-600 font-bold text-xl mb-3">מפגש 2</div>
+                    <div className="text-pink-400 font-bold text-xl mb-3">מפגש 2</div>
                     <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-right">
                       העמקה במיומנויות הפריסטייל ראפ ככלי לביטוי חופשי בחיי היומיום. היכרות עם מנגנוני הגנה של חרדה מהצלחה והימנעות - ומה אפשר לעשות עם זה?
                     </p>
                   </div>
                 </div>
 
-                <div className="relative pr-8 pb-8 border-r-4 border-violet-300">
-                  <div className="absolute -right-3 top-0 w-6 h-6 bg-violet-500 rounded-full ring-4 ring-violet-200"></div>
+                <div className="relative pr-8 pb-8 border-r-4 border-violet-200">
+                  <div className="absolute -right-3 top-0 w-6 h-6 bg-violet-300 rounded-full ring-4 ring-violet-100"></div>
                   <div className="bg-gradient-to-br from-violet-50 to-purple-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
-                    <div className="text-violet-600 font-bold text-xl mb-3">מפגש 3</div>
+                    <div className="text-violet-400 font-bold text-xl mb-3">מפגש 3</div>
                     <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-right">
                       עבודת עומק דרך מפות Immunity to change, חשיבה שפותחה ב־Harvard University, שעוסקת בפער בין השינוי שאנחנו רוצות לבין מה שקורה בפועל, ואיך אפשר להתחיל להזיז אותו דרך תרגול והתנסות אמיתית.
                     </p>
@@ -467,9 +480,9 @@ const App: React.FC = () => {
                 </div>
 
                 <div className="relative pr-8">
-                  <div className="absolute -right-3 top-0 w-6 h-6 bg-purple-500 rounded-full ring-4 ring-purple-200"></div>
+                  <div className="absolute -right-3 top-0 w-6 h-6 bg-purple-300 rounded-full ring-4 ring-purple-100"></div>
                   <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
-                    <div className="text-purple-600 font-bold text-xl mb-3">מפגש 4</div>
+                    <div className="text-purple-400 font-bold text-xl mb-3">מפגש 4</div>
                     <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-right">
                       סיכום התהליך ואיך ליישם את הכלים שתרגלנו בחיים המקצועיים והאישיים.
                     </p>
@@ -483,7 +496,7 @@ const App: React.FC = () => {
         {/* Section 7: Bio Section */}
         <AnimatedSection delay={100}>
           <section id="contact" className="mb-16 lg:mb-24 scroll-mt-28">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text mb-12 text-center">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text mb-12 text-center">
               מי אנחנו?
             </h2>
 
@@ -526,7 +539,7 @@ const App: React.FC = () => {
         {/* Final CTA Section */}
         <AnimatedSection delay={200}>
           <section className="mb-16 lg:mb-24">
-            <div className="bg-gradient-to-r from-purple-600 via-pink-600 to-violet-600 rounded-3xl shadow-2xl p-10 sm:p-12 lg:p-16 text-center">
+            <div className="bg-gradient-to-r from-purple-300 via-pink-300 to-violet-300 rounded-3xl shadow-2xl p-10 sm:p-12 lg:p-16 text-center">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
                 מוכנות להתחיל?
               </h2>
@@ -538,14 +551,14 @@ const App: React.FC = () => {
                   href="https://wa.me/972547534071?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%9C%D7%92%D7%91%D7%99%20%D7%A7%D7%95%D7%A8%D7%A1%20%D7%A4%D7%A8%D7%99%D7%A1%D7%98%D7%99%D7%99%D7%9C%20%D7%9C%D7%A0%D7%A9%D7%99%D7%9D"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-center gap-3 px-8 py-4 bg-white text-purple-600 rounded-2xl font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                  className="group flex items-center justify-center gap-3 px-8 py-4 bg-white text-purple-400 rounded-2xl font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
                 >
                   <FaWhatsapp size={24} />
                   <span>שלחי הודעת וואטסאפ</span>
                 </a>
                 <a
                   href="mailto:darzszor@gmail.com"
-                  className="group flex items-center justify-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-md text-white border-2 border-white rounded-2xl font-bold text-lg shadow-lg hover:bg-white hover:text-purple-600 hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                  className="group flex items-center justify-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-md text-white border-2 border-white rounded-2xl font-bold text-lg shadow-lg hover:bg-white hover:text-purple-400 hover:shadow-2xl hover:scale-105 transition-all duration-300"
                 >
                   <FaEnvelope size={24} />
                   <span>שלחי אימייל</span>
@@ -569,7 +582,7 @@ const App: React.FC = () => {
               />
             </div>
             <div className="text-center">
-              <h3 className="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
+              <h3 className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2">
                 FREESTYLE - Women's Edition
               </h3>
               <p className="text-gray-600 text-sm">© 2026 All rights reserved</p>
