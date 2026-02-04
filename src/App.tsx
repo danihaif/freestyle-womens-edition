@@ -26,6 +26,26 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({ children, delay = 0 }
   );
 };
 
+const AnimatedLogo: React.FC = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
+
+  return (
+    <div ref={ref} className="relative">
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full blur-3xl opacity-30 animate-breathe"></div>
+      <img
+        src="/logo.png"
+        alt="FREESTYLE - Women's Edition"
+        className={`relative h-48 w-48 sm:h-56 sm:w-56 lg:h-72 lg:w-72 rounded-full object-cover shadow-2xl ring-4 ring-white/50 animate-breathe ${
+          inView ? 'animate-slide-in' : 'opacity-0'
+        }`}
+      />
+    </div>
+  );
+};
+
 const App: React.FC = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
@@ -68,7 +88,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div id="top" className="bg-gradient-to-br from-purple-50 via-pink-50 to-violet-50 font-sans text-gray-800 min-h-screen">
+    <div id="top" className="bg-gradient-to-br from-purple-50 via-pink-50 to-violet-50 text-gray-800 min-h-screen" style={{ fontFamily: 'Montserrat, sans-serif' }}>
       {/* Modern Header with Glassmorphism */}
       <header
         ref={headerRef}
@@ -216,10 +236,10 @@ const App: React.FC = () => {
 
             <div className="relative z-10 px-6 sm:px-10 lg:px-16 py-16 lg:py-24 text-center">
               {/* Title */}
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 drop-shadow-lg">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                 FREESTYLE
                 <br />
-                <span className="bg-gradient-to-r from-pink-200 to-violet-200 bg-clip-text text-transparent">
+                <span className="text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]" style={{ fontFamily: 'Caveat, cursive' }}>
                   women's edition
                 </span>
               </h2>
@@ -251,10 +271,10 @@ const App: React.FC = () => {
 
               {/* Description */}
               <div className="max-w-4xl mx-auto space-y-6 text-center">
-                <p className="text-base sm:text-lg lg:text-xl text-gray-100 leading-relaxed">
+                <p className="text-base sm:text-lg lg:text-xl text-white leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] font-medium" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                   תהליך עומק של 4 מפגשים בקבוצה נשית ואינטימית, בהם תחקרי בצורה חווייתית את הדפוסים שמעכבים אותך בחיים המקצועיים והאישיים, תתמודדי פנים אל פנים עם הפחד "לטעות" ולתפוס מקום - ותקבלי שחרור אמיתי וחופש לבטא יותר בחופשיות את מי שאת בכל מרחבי חייך.
                 </p>
-                <p className="text-base sm:text-lg lg:text-xl text-white font-semibold bg-white/10 backdrop-blur-sm rounded-2xl p-6">
+                <p className="text-base sm:text-lg lg:text-xl text-white font-bold bg-white/20 backdrop-blur-md rounded-2xl p-6 shadow-2xl" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                   מסע אקסטרים לאמיצות, שמשלב אימפרוביזציה, פריסטייל ראפ וכלים מבוססי מחקר מעולמות הדרמה תרפיה והאימון העסקי.
                 </p>
               </div>
@@ -284,7 +304,7 @@ const App: React.FC = () => {
         <AnimatedSection delay={100}>
           <section id="about" className="mb-16 lg:mb-24 scroll-mt-28">
             <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl p-8 sm:p-10 lg:p-16 border border-white/20">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text mb-8 text-center">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-8 text-center" style={{ fontFamily: 'Amatic SC, cursive' }}>
                 אז מה קורה בקורס בעצם?
               </h2>
 
@@ -336,24 +356,15 @@ const App: React.FC = () => {
         </AnimatedSection>
 
         {/* Logo Divider */}
-        <AnimatedSection delay={200}>
-          <section id="logo-section" className="my-16 lg:my-24 flex justify-center overflow-hidden">
-            <div className="relative animate-slide-in">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full blur-3xl opacity-30 animate-breathe"></div>
-              <img
-                src="/logo.png"
-                alt="FREESTYLE - Women's Edition"
-                className="relative h-48 w-48 sm:h-56 sm:w-56 lg:h-72 lg:w-72 rounded-full object-cover shadow-2xl ring-4 ring-white/50 animate-breathe"
-              />
-            </div>
-          </section>
-        </AnimatedSection>
+        <section id="logo-section" className="my-20 lg:my-32 py-12 flex justify-center overflow-x-hidden">
+          <AnimatedLogo />
+        </section>
 
         {/* Section 3: Why freestyle rap? */}
         <AnimatedSection delay={100}>
           <section id="why-rap" className="mb-16 lg:mb-24 scroll-mt-28">
             <div className="max-w-4xl mx-auto text-right">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text mb-8 text-center">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-8 text-center" style={{ fontFamily: 'Amatic SC, cursive' }}>
                 למה פריסטייל ראפ?
               </h2>
 
@@ -393,7 +404,7 @@ const App: React.FC = () => {
         <AnimatedSection delay={200}>
           <section className="mb-16 lg:mb-24">
             <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl p-8 sm:p-10 lg:p-16 border border-white/20">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text mb-8 text-center">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-8 text-center" style={{ fontFamily: 'Amatic SC, cursive' }}>
                 למה רק נשים?
               </h2>
 
@@ -421,7 +432,7 @@ const App: React.FC = () => {
         <AnimatedSection delay={100}>
           <section id="who-for" className="mb-16 lg:mb-24 scroll-mt-28">
             <div className="max-w-4xl mx-auto text-right">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-pink-400 to-violet-400 bg-clip-text mb-8 text-center">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-8 text-center" style={{ fontFamily: 'Amatic SC, cursive' }}>
                 למי הקורס מתאים?
               </h2>
 
@@ -430,8 +441,8 @@ const App: React.FC = () => {
                   נשים שעובדים עם ומול א.נשים. מנהלות, יזמיות, מובילות תחום, מנחות קבוצות, מנהלות משאבי אנוש או כל מי שרוצה לשפר את יכולות הביטוי העצמי, לתפוס יותר מקום במרחב ולתקשר את עצמן בביטחון גבוה.
                 </p>
 
-                <div className="bg-gradient-to-r from-purple-300 to-pink-300 rounded-2xl p-8 shadow-2xl">
-                  <p className="text-lg sm:text-xl text-white leading-relaxed font-semibold text-center">
+                <div className="bg-gradient-to-r from-purple-400 to-pink-400 rounded-2xl p-8 shadow-2xl">
+                  <p className="text-lg sm:text-xl text-white leading-relaxed font-bold text-center drop-shadow-lg">
                     אם נמאס לך לעצור את עצמך מלדבר בישיבה, להגיד מה שאת חושבת ולהציע רעיונות כי הם לא "מושלמים" או "מדויקים", הזמן לעבוד על זה הוא עכשיו.
                   </p>
                 </div>
@@ -444,7 +455,7 @@ const App: React.FC = () => {
         <AnimatedSection delay={200}>
           <section className="mb-16 lg:mb-24">
             <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl p-8 sm:p-10 lg:p-16 border border-white/20">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text mb-12 text-center">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-12 text-center" style={{ fontFamily: 'Amatic SC, cursive' }}>
                 מהלך המפגשים
               </h2>
 
@@ -496,7 +507,7 @@ const App: React.FC = () => {
         {/* Section 7: Bio Section */}
         <AnimatedSection delay={100}>
           <section id="contact" className="mb-16 lg:mb-24 scroll-mt-28">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text mb-12 text-center">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-12 text-center" style={{ fontFamily: 'Amatic SC, cursive' }}>
               מי אנחנו?
             </h2>
 
