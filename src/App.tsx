@@ -1,5 +1,6 @@
-import React, { ReactNode } from 'react';
+import React, { type ReactNode } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { FaWhatsapp, FaEnvelope } from 'react-icons/fa';
 
 interface AnimatedSectionProps {
   children: ReactNode;
@@ -39,14 +40,25 @@ const App: React.FC = () => {
           {/* Section 1: Hero */}
           <section className="mb-24">
             <h2 className="text-4xl font-semibold text-gray-800 leading-tight mb-6">FREESTYLE - women’s edition</h2>
-            <a
-              href="https://wa.me/972547534071?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%9C%D7%92%D7%91%D7%99%20%D7%A7%D7%95%D7%A8%D7%A1%20%D7%A4%D7%A8%D7%99%D7%A1%D7%98%D7%99%D7%99%D7%9C%20%D7%9C%D7%A0%D7%A9%D7%99%D7%9D%E2%80%9D"
-              className="bg-teal-500 text-white font-bold rounded-lg py-3 px-8 hover:bg-teal-600 transition duration-300 inline-block mb-10"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              לחצו והצטרפו אלינו!
-            </a>
+            <p className="text-xl font-bold text-gray-700 mb-6">לחצו והצטרפו אלינו!</p>
+            <div className="flex justify-center gap-6 mb-10">
+              <a
+                href="https://wa.me/972547534071?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%9C%D7%92%D7%91%D7%99%20%D7%A7%D7%95%D7%A8%D7%A1%20%D7%A4%D7%A8%D7%99%D7%A1%D7%98%D7%99%D7%99%D7%9C%20%D7%9C%D7%A0%D7%A9%D7%99%D7%9D%E2%80%9D"
+                className="text-teal-500 hover:text-teal-600 transition duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Contact via WhatsApp"
+              >
+                <FaWhatsapp size={40} />
+              </a>
+              <a
+                href="mailto:darzszor@gmail.com"
+                className="text-teal-500 hover:text-teal-600 transition duration-300"
+                aria-label="Contact via Email"
+              >
+                <FaEnvelope size={40} />
+              </a>
+            </div>
             <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto mb-6">
               תהליך עומק של 4 מפגשים בקבוצה נשית ואינטימית, בהם תחקרי בצורה חווייתית את הדפוסים שמעכבים אותך בחיים המקצועיים והאישיים, תתמודדי פנים אל פנים עם הפחד "לטעות" ולתפוס מקום - ותקבלי שחרור אמיתי וחופש לבטא יותר בחופשיות את מי שאת בכל מרחבי חייך.
             </p>
@@ -79,14 +91,24 @@ const App: React.FC = () => {
               העבודה בסדנה נשענת גם על גישות מחקריות מעולם הלמידה הבוגרת (טיפול בדרמה תרפיה, CBT) כולל חשיבה שפותחה ב־Harvard University, שעוסקת בפער בין השינוי שאנחנו רוצות לבין מה שקורה בפועל, ואיך אפשר להתחיל להניע שינויים בחיינו דרך התנסות אמיתית.
               במהלך הקורס תקבלי משימות בית שיניעו אותך לשינויים ממשיים בחייך המקצועיים והאישיים. הקורס ילווה ע"י קבוצת וואסטפ בה יישלחו תרגולים שבועיים כדי לתרגל את הכלים מחוץ למרחב הקורס.
             </p>
-            <a
-              href="https://wa.me/972547534071?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%9C%D7%92%D7%91%D7%99%20%D7%A7%D7%95%D7%A8%D7%A1%20%D7%A4%D7%A8%D7%99%D7%A1%D7%98%D7%99%D7%99%D7%9C%20%D7%9C%D7%A0%D7%A9%D7%99%D7%9D%E2%80%9D"
-              className="text-teal-600 font-bold hover:underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              לחצו והצטרפו אלינו!
-            </a>
+            <div className="flex justify-center gap-6 mt-8">
+              <a
+                href="https://wa.me/972547534071?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%9C%D7%92%D7%91%D7%99%20%D7%A7%D7%95%D7%A8%D7%A1%20%D7%A4%D7%A8%D7%99%D7%A1%D7%98%D7%99%D7%99%D7%9C%20%D7%9C%D7%A0%D7%A9%D7%99%D7%9D%E2%80%9D"
+                className="text-teal-500 hover:text-teal-600 transition duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Contact via WhatsApp"
+              >
+                <FaWhatsapp size={36} />
+              </a>
+              <a
+                href="mailto:darzszor@gmail.com"
+                className="text-teal-500 hover:text-teal-600 transition duration-300"
+                aria-label="Contact via Email"
+              >
+                <FaEnvelope size={36} />
+              </a>
+            </div>
           </section>
         </AnimatedSection>
 
