@@ -27,58 +27,66 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({ children }) => {
 
 const App: React.FC = () => {
   return (
-    <div className="bg-slate-50 font-sans text-gray-800">
-      <header className="bg-white shadow-sm sticky top-0 z-50">
-        <div className="container mx-auto px-6 py-4 text-center">
+    <div className="bg-purple-50 font-sans text-gray-800">
+      <header className="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <div className="container mx-auto px-6 py-2 text-center">
           <h1 className="text-2xl font-semibold text-gray-800">FREESTYLE - Women’s Edition</h1>
-          <p className="text-lg text-gray-500">תהליך עומק, אימפרוביזציה ופריסטייל ראפ לנשים</p>
+          <nav className="flex justify-center gap-4 md:gap-8 mt-2">
+            <a href="#about" className="text-gray-600 hover:text-violet-500 transition duration-300">מה בקורס?</a>
+            <a href="#why-rap" className="text-gray-600 hover:text-violet-500 transition duration-300">למה ראפ?</a>
+            <a href="#who-for" className="text-gray-600 hover:text-violet-500 transition duration-300">למי זה מתאים?</a>
+            <a href="#contact" className="text-gray-600 hover:text-violet-500 transition duration-300">מי אנחנו?</a>
+          </nav>
         </div>
       </header>
 
       <main className="container mx-auto px-6 py-16 text-center">
         <AnimatedSection>
           {/* Section 1: Hero */}
-          <section className="mb-24">
-            <h2 className="text-4xl font-semibold text-gray-800 leading-tight mb-6">FREESTYLE - women’s edition</h2>
-            <p className="text-xl font-bold text-gray-700 mb-6">לחצו והצטרפו אלינו!</p>
-            <div className="flex justify-center gap-6 mb-10">
-              <a
-                href="https://wa.me/972547534071?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%9C%D7%92%D7%91%D7%99%20%D7%A7%D7%95%D7%A8%D7%A1%20%D7%A4%D7%A8%D7%99%D7%A1%D7%98%D7%99%D7%99%D7%9C%20%D7%9C%D7%A0%D7%A9%D7%99%D7%9D%E2%80%9D"
-                className="text-teal-500 hover:text-teal-600 transition duration-300"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Contact via WhatsApp"
-              >
-                <FaWhatsapp size={40} />
-              </a>
-              <a
-                href="mailto:darzszor@gmail.com"
-                className="text-teal-500 hover:text-teal-600 transition duration-300"
-                aria-label="Contact via Email"
-              >
-                <FaEnvelope size={40} />
-              </a>
-            </div>
-            <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto mb-6">
-              תהליך עומק של 4 מפגשים בקבוצה נשית ואינטימית, בהם תחקרי בצורה חווייתית את הדפוסים שמעכבים אותך בחיים המקצועיים והאישיים, תתמודדי פנים אל פנים עם הפחד "לטעות" ולתפוס מקום - ותקבלי שחרור אמיתי וחופש לבטא יותר בחופשיות את מי שאת בכל מרחבי חייך.
-            </p>
-            <p className="text-gray-800 font-semibold text-lg max-w-3xl mx-auto mb-10">
-              מסע אקסטרים לאמיצות, שמשלב אימפרוביזציה, פריסטייל ראפ וכלים מבוססי מחקר מעולמות הדרמה תרפיה והאימון העסקי.
-            </p>
-            <div className="text-gray-500 font-semibold mb-12">
-              <p>12.4 | 19.4 | 26.4 | 3.5</p>
-              <p>ימי ראשון 19:30-22:00</p>
-              <p>סטודיו מונטי9, בית שמאי 9 תל אביב</p>
-            </div>
-            <div className="flex justify-center">
-               <img src="/main.jpeg" alt="Workshop" className="rounded-full object-cover w-80 h-80 mx-auto" />
+          <section 
+            id="hero" 
+            className="mb-24 rounded-lg shadow-lg bg-cover bg-center relative"
+            style={{ backgroundImage: 'url(/main.jpeg)' }}
+          >
+            <div className="bg-black/60 rounded-lg p-10 md:p-16">
+              <h2 className="text-4xl font-semibold text-white leading-tight mb-6">FREESTYLE - women’s edition</h2>
+              <p className="text-xl font-bold text-violet-300 mb-6">לחצו והצטרפו אלינו!</p>
+              <div className="flex justify-center gap-6 mb-10">
+                <a
+                  href="https://wa.me/972547534071?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%9C%D7%92%D7%91%D7%99%20%D7%A7%D7%95%D7%A8%D7%A1%20%D7%A4%D7%A8%D7%99%D7%A1%D7%98%D7%99%D7%99%D7%9C%20%D7%9C%D7%A0%D7%A9%D7%99%D7%9D%E2%80%9D"
+                  className="text-green-400 hover:text-green-300 transition duration-300"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Contact via WhatsApp"
+                >
+                  <FaWhatsapp size={40} />
+                </a>
+                <a
+                  href="mailto:darzszor@gmail.com"
+                  className="text-red-400 hover:text-red-300 transition duration-300"
+                  aria-label="Contact via Email"
+                >
+                  <FaEnvelope size={40} />
+                </a>
+              </div>
+              <p className="text-gray-200 text-lg leading-relaxed max-w-3xl mx-auto mb-6">
+                תהליך עומק של 4 מפגשים בקבוצה נשית ואינטימית, בהם תחקרי בצורה חווייתית את הדפוסים שמעכבים אותך בחיים המקצועיים והאישיים, תתמודדי פנים אל פנים עם הפחד "לטעות" ולתפוס מקום - ותקבלי שחרור אמיתי וחופש לבטא יותר בחופשיות את מי שאת בכל מרחבי חייך.
+              </p>
+              <p className="text-white font-semibold text-lg max-w-3xl mx-auto mb-10">
+                מסע אקסטרים לאמיצות, שמשלב אימפרוביזציה, פריסטייל ראפ וכלים מבוססי מחקר מעולמות הדרמה תרפיה והאימון העסקי.
+              </p>
+              <div className="text-gray-300 font-semibold mb-12">
+                <p>12.4 | 19.4 | 26.4 | 3.5</p>
+                <p>ימי ראשון 19:30-22:00</p>
+                <p>סטודיו מונטי9, בית שמאי 9 תל אביב</p>
+              </div>
             </div>
           </section>
         </AnimatedSection>
 
         <AnimatedSection>
           {/* Section 2: What happens in the course? */}
-          <section className="bg-white rounded-lg shadow-lg p-10 mb-20">
+          <section id="about" className="bg-white/70 backdrop-blur-md rounded-lg shadow-lg p-10 mb-20 pt-16">
             <h2 className="text-3xl font-semibold text-gray-800 mb-6">אז מה קורה בקורס בעצם?</h2>
             <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto mb-4">
               הקורס מיועד לנשים מובילות, שעובדות עם אנשים ומול אנשים בתחומים שונים - ומרגישות שהפרפקציוניזם, הפחד לטעות והביקורת העצמית גורמים להן לעצור את עצמן - גם כשהן יודעות טוב מאוד שיש להן המון מה לתת.
@@ -94,7 +102,7 @@ const App: React.FC = () => {
             <div className="flex justify-center gap-6 mt-8">
               <a
                 href="https://wa.me/972547534071?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%9C%D7%92%D7%91%D7%99%20%D7%A7%D7%95%D7%A8%D7%A1%20%D7%A4%D7%A8%D7%99%D7%A1%D7%98%D7%99%D7%99%D7%9C%20%D7%9C%D7%A0%D7%A9%D7%99%D7%9D%E2%80%9D"
-                className="text-teal-500 hover:text-teal-600 transition duration-300"
+                className="text-green-500 hover:text-green-600 transition duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Contact via WhatsApp"
@@ -103,7 +111,7 @@ const App: React.FC = () => {
               </a>
               <a
                 href="mailto:darzszor@gmail.com"
-                className="text-teal-500 hover:text-teal-600 transition duration-300"
+                className="text-red-500 hover:text-red-600 transition duration-300"
                 aria-label="Contact via Email"
               >
                 <FaEnvelope size={36} />
@@ -114,7 +122,7 @@ const App: React.FC = () => {
 
         <AnimatedSection>
           {/* Section 3: Why freestyle rap? */}
-          <section className="mb-20">
+          <section id="why-rap" className="mb-20 pt-16">
             <h2 className="text-3xl font-semibold text-gray-800 mb-6">למה פריסטייל ראפ?</h2>
             <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto mb-4">
               קודם כל כי זה מגניב.
@@ -136,7 +144,7 @@ const App: React.FC = () => {
 
         <AnimatedSection>
           {/* Section 4: Why only women? */}
-          <section className="bg-white rounded-lg shadow-lg p-10 mb-20">
+          <section className="bg-white/70 backdrop-blur-md rounded-lg shadow-lg p-10 mb-20">
             <h2 className="text-3xl font-semibold text-gray-800 mb-6">למה רק נשים?</h2>
             <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto mb-6">
               אחרי עשרות סדנאות מעורבות, החלטנו ליצור מרחב לנשים - כי פשוט קורה משהו מיוחד במרחב נשי בלבד. מרחב כזה שמחזק את הידיעה ש"אני לא לבד" ומאפשר שיח פתוח על נושאים שלעיתים מושתקים או מעוררים אי נוחות במרחב הכללי. במרחבים נשיים, נשים מדווחות על ירידה ברמת החרדה ועלייה בביטחון העצמי ובחופש לבטא את עצמן.
@@ -145,7 +153,7 @@ const App: React.FC = () => {
               מחקרים מראים שנשים נוטות לבקר את עצמן ולפקפק ביכולות שלהן יותר מגברים, ולהימנע מלקיחת סיכונים וביטוי עצמי חופשי ומשוחרר. וזה מבאס, כי אנחנו מדהימות! בואו נעבוד על זה ביחד.
             </p>
             <div className="flex justify-center">
-              <div className="w-full max-w-2xl h-80 bg-slate-100 rounded-lg shadow-md flex items-center justify-center">
+              <div className="w-full max-w-2xl h-80 bg-white/50 rounded-lg shadow-md flex items-center justify-center">
                 <span className="text-gray-400">תמונה</span>
               </div>
             </div>
@@ -154,7 +162,7 @@ const App: React.FC = () => {
 
         <AnimatedSection>
           {/* Section 5: Who is the course for? */}
-          <section className="mb-20">
+          <section id="who-for" className="mb-20 pt-16">
             <h2 className="text-3xl font-semibold text-gray-800 mb-6">למי הקורס מתאים?</h2>
             <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto mb-4">
               נשים שעובדים עם ומול א.נשים. מנהלות, יזמיות, מובילות תחום, מנחות קבוצות, מנהלות משאבי אנוש או כל מי שרוצה לשפר את יכולות הביטוי העצמי, לתפוס יותר מקום במרחב ולתקשר את עצמן בביטחון גבוה.
@@ -167,7 +175,7 @@ const App: React.FC = () => {
 
         <AnimatedSection>
           {/* Section 6: Course structure */}
-          <section className="bg-white rounded-lg shadow-lg p-10 mb-20">
+          <section className="bg-white/70 backdrop-blur-md rounded-lg shadow-lg p-10 mb-20">
             <h2 className="text-3xl font-semibold text-gray-800 mb-6">מהלך המפגשים:</h2>
             <div className="max-w-3xl mx-auto text-right space-y-4 text-gray-600 text-lg leading-relaxed">
               <p>
@@ -188,13 +196,13 @@ const App: React.FC = () => {
 
         <AnimatedSection>
           {/* Section 7: Bio Section */}
-          <section className="mb-20">
+          <section id="contact" className="mb-20 pt-16">
             <h2 className="text-3xl font-semibold text-gray-800 mb-10">מי אנחנו?</h2>
             <div className="flex flex-col md:flex-row justify-center items-start gap-12">
 
               {/* Dar Shor Bio */}
               <div className="md:w-1/3 text-center">
-                <div className="w-48 h-48 bg-slate-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <div className="w-48 h-48 bg-white/50 rounded-full mx-auto mb-4 flex items-center justify-center">
                   <span className="text-gray-400">Dar's Photo</span>
                 </div>
                 <h3 className="text-2xl font-semibold text-gray-800 mb-2">דר שור</h3>
@@ -205,7 +213,7 @@ const App: React.FC = () => {
 
               {/* Iris Degani Bio */}
               <div className="md:w-1/3 text-center">
-                <div className="w-48 h-48 bg-slate-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <div className="w-48 h-48 bg-white/50 rounded-full mx-auto mb-4 flex items-center justify-center">
                   <span className="text-gray-400">Iris's Photo</span>
                 </div>
                 <h3 className="text-2xl font-semibold text-gray-800 mb-2">איריס דגני</h3>
@@ -219,7 +227,7 @@ const App: React.FC = () => {
         </AnimatedSection>
       </main>
 
-      <footer className="bg-white mt-12 py-6">
+      <footer className="bg-white/70 backdrop-blur-md mt-12 py-6">
           <div className="container mx-auto px-6">
               <p className="text-center text-gray-500">© 2026 FREESTYLE - Women’s Edition. All rights reserved.</p>
           </div>
