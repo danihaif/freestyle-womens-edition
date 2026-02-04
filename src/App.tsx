@@ -1,4 +1,4 @@
-import React, { type ReactNode, useState, useEffect } from 'react';
+import React, { type ReactNode, useState, useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { FaWhatsapp, FaEnvelope } from 'react-icons/fa';
 
@@ -28,6 +28,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({ children }) => {
 const App: React.FC = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
+  const headerRef = useRef<HTMLHeadElement>(null);
 
   const handleScroll = () => {
     const currentScrollPos = window.pageYOffset;
@@ -40,9 +41,24 @@ const App: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [prevScrollPos, visible, handleScroll]);
 
+  const smoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    if (targetElement && headerRef.current) {
+      const headerHeight = headerRef.current.offsetHeight;
+      const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
     <div className="bg-purple-50 font-sans text-gray-800">
       <header
+        ref={headerRef}
         className={`bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-all duration-300 h-auto ${
           visible ? 'top-0' : '-top-40'
         }`}
@@ -50,13 +66,13 @@ const App: React.FC = () => {
         <div className="container mx-auto px-6 py-2 flex flex-col">
           <div className="flex justify-between items-center w-full">
             <img src="/logo.png" alt="FREESTYLE - Women’s Edition" className="h-24 w-24 rounded-full" />
-            <h1 className="text-2xl font-semibold text-gray-800 flex-grow text-center">FREESTYLE - Women’s Edition</h1>
+            <h1 className="text-2xl font-semibold text-gray-800 flex-grow text-center font-playfair">FREESTYLE - Women’s Edition</h1>
           </div>
           <nav className="flex justify-center gap-4 md:gap-8 mt-2 w-full">
-            <a href="#about" className="text-gray-600 hover:text-violet-500 transition duration-300">מה בקורס</a>
-            <a href="#why-rap" className="text-gray-600 hover:text-violet-500 transition duration-300">למה ראפ</a>
-            <a href="#who-for" className="text-gray-600 hover:text-violet-500 transition duration-300">למי זה מתאים</a>
-            <a href="#contact" className="text-gray-600 hover:text-violet-500 transition duration-300">מי אנחנו</a>
+            <a href="#about" onClick={(e) => smoothScroll(e, 'about')} className="text-gray-600 hover:text-violet-500 transition duration-300 border-2 border-violet-200 rounded-lg px-4 py-2 font-playfair">מה בקורס</a>
+            <a href="#why-rap" onClick={(e) => smoothScroll(e, 'why-rap')} className="text-gray-600 hover:text-violet-500 transition duration-300 border-2 border-violet-200 rounded-lg px-4 py-2 font-playfair">למה ראפ</a>
+            <a href="#who-for" onClick={(e) => smoothScroll(e, 'who-for')} className="text-gray-600 hover:text-violet-500 transition duration-300 border-2 border-violet-200 rounded-lg px-4 py-2 font-playfair">למי זה מתאים</a>
+            <a href="#contact" onClick={(e) => smoothScroll(e, 'contact')} className="text-gray-600 hover:text-violet-500 transition duration-300 border-2 border-violet-200 rounded-lg px-4 py-2 font-playfair">מי אנחנו</a>
           </nav>
         </div>
       </header>
@@ -138,6 +154,12 @@ const App: React.FC = () => {
                 <FaEnvelope size={36} />
               </a>
             </div>
+          </section>
+        </AnimatedSection>
+        
+        <AnimatedSection>
+          <section id="logo-section" className="my-20">
+            <img src="/logo.png" alt="FREESTYLE - Women’s Edition" className="h-48 w-48 rounded-full mx-auto animate-breathe" />
           </section>
         </AnimatedSection>
 
@@ -249,7 +271,8 @@ const App: React.FC = () => {
       </main>
 
       <footer className="bg-white/70 backdrop-blur-md mt-12 py-6">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-6 flex flex-col items-center">
+              <img src="/logo.png" alt="FREESTYLE - Women’s Edition" className="h-16 w-16 rounded-full mb-4" />
               <p className="text-center text-gray-500">© 2026 FREESTYLE - Women’s Edition. All rights reserved.</p>
           </div>
       </footer>
