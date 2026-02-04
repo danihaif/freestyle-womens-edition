@@ -65,7 +65,7 @@ const App: React.FC = () => {
       >
         <div className="container mx-auto px-6 py-2 flex flex-col">
           <div className="flex justify-between items-center w-full">
-            <img src="/logo.png" alt="FREESTYLE - Women’s Edition" className="h-24 w-24 rounded-full" />
+            <img src="/logo.png" alt="FREESTYLE - Women’s Edition" className="h-24 w-24 rounded-full transform scale-150 animate-pulse" />
             <h1 className="text-2xl font-semibold text-gray-800 flex-grow text-center font-playfair">FREESTYLE - Women’s Edition</h1>
           </div>
           <nav className="flex justify-center gap-4 md:gap-8 mt-2 w-full">
