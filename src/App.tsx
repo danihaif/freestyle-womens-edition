@@ -271,7 +271,7 @@ const App: React.FC = () => {
 
               {/* Description */}
               <div className="max-w-4xl mx-auto space-y-6 text-center">
-                <p className="text-base sm:text-lg lg:text-xl text-white leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] font-medium" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                <p className="text-lg sm:text-xl lg:text-2xl text-white leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] font-bold" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                   תהליך עומק של 4 מפגשים בקבוצה נשית ואינטימית, בהם תחקרי בצורה חווייתית את הדפוסים שמעכבים אותך בחיים המקצועיים והאישיים, תתמודדי פנים אל פנים עם הפחד "לטעות" ולתפוס מקום - ותקבלי שחרור אמיתי וחופש לבטא יותר בחופשיות את מי שאת בכל מרחבי חייך.
                 </p>
                 <p className="text-base sm:text-lg lg:text-xl text-white font-bold bg-white/20 backdrop-blur-md rounded-2xl p-6 shadow-2xl" style={{ fontFamily: 'Montserrat, sans-serif' }}>
