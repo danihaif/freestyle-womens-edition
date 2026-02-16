@@ -437,10 +437,18 @@ const App: React.FC = () => {
                 </p>
               </div>
 
-              {/* Image Placeholder */}
+              {/* YouTube Video Embed */}
               <div className="mt-10 flex justify-center">
-                <div className="w-full max-w-3xl h-64 sm:h-80 lg:h-96 bg-gradient-to-br from-purple-200 via-pink-200 to-violet-200 rounded-3xl shadow-xl flex items-center justify-center overflow-hidden">
-                  <span className="text-gray-500 text-lg font-semibold">תמונה</span>
+                <div className="relative w-full max-w-3xl h-0" style={{ paddingBottom: '56.25%' }}> {/* 16:9 aspect ratio */}
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full rounded-3xl shadow-xl"
+                    src="https://www.youtube.com/embed/n4dCdtJkZLg"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  ></iframe>
                 </div>
               </div>
             </div>
