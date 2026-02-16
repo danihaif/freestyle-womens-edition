@@ -1,6 +1,6 @@
 import React, { type ReactNode, useState, useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { FaWhatsapp, FaEnvelope, FaBars, FaTimes } from 'react-icons/fa';
+import { FaWhatsapp, FaEnvelope, FaBars, FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 interface AnimatedSectionProps {
   children: ReactNode;
@@ -42,6 +42,70 @@ const AnimatedLogo: React.FC = () => {
           inView ? 'animate-slide-in' : 'opacity-0'
         }`}
       />
+    </div>
+  );
+};
+
+const recommendationImages = [
+  'Raprec3 (1).jpeg',
+  'Raprec4.jpeg',
+  'WhatsApp Image 2026-02-03 at 20.32.45.jpeg',
+  'WhatsApp Image 2026-02-03 at 20.32.451.jpeg',
+  'WhatsApp Image 2026-02-03 at 20.32.56.jpeg',
+  'WhatsApp Image 2026-02-03 at 20.33.58.jpeg',
+  'WhatsApp Image 2026-02-03 at 20.47.31.jpeg',
+  'WhatsApp Image 2026-02-03 at 20.47.35.jpeg'
+];
+
+const Carousel: React.FC<{ images: string[] }> = ({ images }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const goToPrevious = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? images.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const goToNext = () => {
+    const isLastSlide = currentIndex === images.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+
+  return (
+    <div className="relative w-full max-w-2xl mx-auto">
+      <div className="relative h-96 overflow-hidden rounded-3xl bg-white/30 backdrop-blur-xl shadow-2xl border border-white/20">
+        <img
+          src={`/recommendations/${images[currentIndex]}`}
+          alt={`Recommendation ${currentIndex + 1}`}
+          className="w-full h-full object-contain transition-transform duration-500 ease-in-out"
+        />
+      </div>
+      <button
+        onClick={goToPrevious}
+        className="absolute top-1/2 left-2 -translate-y-1/2 bg-white/50 hover:bg-white/80 text-gray-700 p-3 rounded-full shadow-lg transition-all duration-300 z-10"
+        aria-label="Previous"
+      >
+        <FaChevronLeft size={24} />
+      </button>
+      <button
+        onClick={goToNext}
+        className="absolute top-1/2 right-2 -translate-y-1/2 bg-white/50 hover:bg-white/80 text-gray-700 p-3 rounded-full shadow-lg transition-all duration-300 z-10"
+        aria-label="Next"
+      >
+        <FaChevronRight size={24} />
+      </button>
+      <div className="flex justify-center mt-4 space-x-2">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              currentIndex === index ? 'bg-purple-400' : 'bg-white/50 hover:bg-purple-200'
+            }`}
+          ></button>
+        ))}
+      </div>
     </div>
   );
 };
@@ -135,6 +199,14 @@ const App: React.FC = () => {
                   <div className="absolute inset-0 bg-purple-50 rounded-xl scale-0 group-hover:scale-100 transition-transform duration-300"></div>
                 </a>
                 <a
+                  href="#recommendations"
+                  onClick={(e) => smoothScroll(e, 'recommendations')}
+                  className="group relative px-5 py-2.5 text-gray-700 hover:text-purple-400 transition-all duration-300 font-medium"
+                >
+                  <span className="relative z-10">המלצות</span>
+                  <div className="absolute inset-0 bg-purple-50 rounded-xl scale-0 group-hover:scale-100 transition-transform duration-300"></div>
+                </a>
+                <a
                   href="#contact"
                   onClick={(e) => smoothScroll(e, 'contact')}
                   className="group relative px-5 py-2.5 text-gray-700 hover:text-purple-400 transition-all duration-300 font-medium"
@@ -198,6 +270,13 @@ const App: React.FC = () => {
               className="px-4 py-3 text-gray-700 hover:text-purple-400 hover:bg-purple-50 rounded-xl transition-all duration-300 font-medium text-center"
             >
               למי זה מתאים
+            </a>
+            <a
+              href="#recommendations"
+              onClick={(e) => smoothScroll(e, 'recommendations')}
+              className="px-4 py-3 text-gray-700 hover:text-purple-400 hover:bg-purple-50 rounded-xl transition-all duration-300 font-medium text-center"
+            >
+              המלצות
             </a>
             <a
               href="#contact"
@@ -558,6 +637,16 @@ const App: React.FC = () => {
                 </div>
               </div>
             </div>
+          </section>
+        </AnimatedSection>
+
+        {/* Recommendations Section */}
+        <AnimatedSection delay={100}>
+          <section id="recommendations" className="mb-16 lg:mb-24 scroll-mt-28">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-12 text-center" style={{ fontFamily: 'Amatic SC, cursive' }}>
+              המלצות
+            </h2>
+            <Carousel images={recommendationImages} />
           </section>
         </AnimatedSection>
 
