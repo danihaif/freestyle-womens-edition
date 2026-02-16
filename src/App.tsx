@@ -271,11 +271,20 @@ const App: React.FC = () => {
 
               {/* Description */}
               <div className="max-w-4xl mx-auto space-y-6 text-center">
-                <p className="text-lg sm:text-xl lg:text-2xl text-white leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] font-bold" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                  תהליך עומק של 4 מפגשים בקבוצה נשית ואינטימית, בהם תחקרי בצורה חווייתית את הדפוסים שמעכבים אותך בחיים המקצועיים והאישיים, תתמודדי פנים אל פנים עם הפחד "לטעות" ולתפוס מקום - ותקבלי שחרור אמיתי וחופש לבטא יותר בחופשיות את מי שאת בכל מרחבי חייך.
+                <p className="text-lg sm:text-xl lg:text-2xl text-white leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                  <span className="font-bold">את יודעת שיש לך מה להגיד. יש לך רעיונות, ניסיון, עומק.</span>
+                  <br />
+                  <br />
+                  <span className="font-normal">ובכל זאת, בישיבה, מול קהל, מול אנשים חשובים בעיניך - </span>
+                  <span className="font-extrabold">את עוצרת.</span>
+                  <br />
+                  <span className="font-normal">את שוקלת כל מילה. מחכה “להיות יותר מוכנה”. מוותרת על רעיון כי הוא לא מושלם.</span>
+                  <br />
+                  <br />
+                  <span className="font-extrabold text-2xl sm:text-3xl">ואחר כך יוצאת וחושבת: למה שוב לא אמרתי?</span>
                 </p>
-                <p className="text-base sm:text-lg lg:text-xl text-white font-bold bg-white/20 backdrop-blur-md rounded-2xl p-6 shadow-2xl" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                  מסע אקסטרים לאמיצות, שמשלב אימפרוביזציה, פריסטייל ראפ וכלים מבוססי מחקר מעולמות הדרמה תרפיה והאימון העסקי.
+                <p className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white bg-white/20 backdrop-blur-md rounded-2xl p-6 shadow-2xl" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                  את מוזמנת לתהליך עומק בקבוצה נשית ואינטימית שמשלב אימפרוביזציה, פריסטייל ראפ וכלים מבוססי מחקר מעולמות הדרמה תרפיה והאימון העסקי.
                 </p>
               </div>
 
