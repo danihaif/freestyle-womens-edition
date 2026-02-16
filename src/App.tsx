@@ -436,21 +436,6 @@ const App: React.FC = () => {
                   וזה מבאס, כי אין סיבה! בואו נעבוד על זה ביחד.
                 </p>
               </div>
-
-              {/* YouTube Video Embed */}
-              <div className="mt-10 flex justify-center">
-                <div className="relative w-full max-w-3xl h-0" style={{ paddingBottom: '56.25%' }}> {/* 16:9 aspect ratio */}
-                  <iframe
-                    className="absolute top-0 left-0 w-full h-full rounded-3xl shadow-xl"
-                    src="https://www.youtube.com/embed/n4dCdtJkZLg"
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-              </div>
             </div>
           </section>
         </AnimatedSection>
@@ -571,6 +556,25 @@ const App: React.FC = () => {
                    VP HR ו-Executive Coach, עם רקע בפסיכולוגיה (B.A) וחינוך (M.A). מגיעה מעולמות משאבי האנוש והפיתוח הארגוני, ועובדת עם מנהלות.ים וצוותים בתהליכי צמיחה ושינוי. משלבת בעבודתה כלים חווייתיים ויישומיים לחיזוק נוכחות וביטחון.
                   </p>
                 </div>
+              </div>
+            </div>
+          </section>
+        </AnimatedSection>
+
+        {/* YouTube Video Embed */}
+        <AnimatedSection delay={200}>
+          <section className="mb-16 lg:mb-24">
+            <div className="mt-10 flex justify-center">
+              <div className="relative w-full max-w-3xl h-0" style={{ paddingBottom: '56.25%' }}> {/* 16:9 aspect ratio */}
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full rounded-3xl shadow-xl"
+                  src="https://www.youtube.com/embed/n4dCdtJkZLg"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-compilance"
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
           </section>
