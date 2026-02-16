@@ -301,7 +301,14 @@ const App: React.FC = () => {
                   </p>
                   <p className="flex items-center justify-center gap-2">
                     <span className="text-pink-300">📍</span>
-                    סטודיו מונטי9, בית שמאי 9 תל אביב
+                    <a
+                      href="https://maps.app.goo.gl/2cYeHRN86ofrkbMw9"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white hover:text-pink-300 underline transition-colors duration-300"
+                    >
+                      מרכז ביכורי העתים, ליאונרדו דה וינצ'י 2 תל אביב
+                    </a>
                   </p>
                 </div>
               </div>
@@ -319,25 +326,26 @@ const App: React.FC = () => {
 
               <div className="max-w-4xl mx-auto space-y-6 text-right">
                 <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                  הקורס מיועד לנשים מובילות, שעובדות עם אנשים ומול אנשים בתחומים שונים - ומרגישות שהפרפקציוניזם, הפחד לטעות והביקורת העצמית גורמים להן לעצור את עצמן - גם כשהן יודעות טוב מאוד שיש להן המון מה לתת.
+                  נחקור בצורה חווייתית דפוסים שמעכבים אותך, נתמודד עם הפחד לטעות ולתפוס מקום, ונתרגל ביטוי חופשי, נוכחות וביטחון.
+                  הקורס מיועד לנשים מובילות שעובדות עם אנשים ומול אנשים, מרגישות שהפרפקציוניזם, הפחד לטעות והביקורת העצמית גורמים להן לעצור- גם כשהן יודעות שיש להן הרבה מה לתת.
                 </p>
 
                 <div className="bg-gradient-to-r from-purple-100 to-pink-100 rounded-2xl p-6 my-8">
                   <p className="text-lg sm:text-xl font-bold text-gray-900 text-center">
-                    זו לא סדנת דיבור מול קהל!
+זה תהליך עומק, חווייתי ופרקטי - לא סדנת דיבור מול קהל.
                   </p>
                 </div>
 
                 <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                  זה תהליך בו דרך התנסות באימפרוביזציה ופריסטייל ראפ, בקבוצה אינטימית ובטוחה ובקצב הדרגתי, נחקור את הדפוסים שמעכבים אותנו, ונתנסה בדרך פעולה אחרת - להעיז לצאת מאזור הנוחות, גם כשהתוצאה אינה ברורה או מושלמת. אנחנו מזמינות אתכן לעבוד על הפחדים והחסמים שלכן, בתהליך עומק חווייתי ועוצמתי.
+                  דרך אימפרוביזציה ופריסטייל ראפ, בקבוצה אינטימית, בטוחה ובקצב הדרגתי, נחקור דפוסים מעכבים ונתנסה בדרך פעולה אחרת - להעיז גם כשהתוצאה לא מושלמת ולא ידועה מראש.
                 </p>
 
                 <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                  העבודה בסדנה נשענת גם על גישות מחקריות מעולם הלמידה הבוגרת (טיפול בדרמה תרפיה, CBT) כולל חשיבה שפותחה ב־Harvard University, שעוסקת בפער בין השינוי שאנחנו רוצות לבין מה שקורה בפועל, ואיך אפשר להתחיל להניע שינויים בחיינו דרך התנסות אמיתית.
+                  הקורס נשען על גישות מבוססות מחקר מעולמות הדרמה תרפיה, CBT ומודל שפותח על ידי חוקרים מ־Harvard University, שעוסק בפער בין הרצון לשינוי לבין מה שקורה בפועל - ואיך אפשר להתחיל להזיז אותו דרך התנסות אמיתית.
                 </p>
 
                 <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                  במהלך הקורס תקבלי משימות בית שיניעו אותך לשינויים ממשיים בחייך המקצועיים והאישיים. הקורס ילווה ע"י קבוצת וואסטפ בה יישלחו תרגולים שבועיים כדי לתרגל את הכלים מחוץ למרחב הקורס.
+                  במהלך הקורס תקבלי משימות בית ותרגולים ליישום בחיים האישיים והמקצועיים, וליווי בקבוצת וואטסאפ עם תרגול שבועי בין המפגשים.
                 </p>
               </div>
 
@@ -391,13 +399,13 @@ const App: React.FC = () => {
                     <p className="text-gray-800 font-semibold">לחזק את שריר הFLOW שנדרש מאיתנו ביומיום</p>
                   </div>
                   <div className="bg-gradient-to-br from-pink-100 to-violet-100 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    <p className="text-gray-800 font-semibold">להתמודד עם חוסר וודאות, שינויים ומצבים שאת לא מוכנה אליהם</p>
+                    <p className="text-gray-800 font-semibold">להתמודד עם חוסר וודאות ושינויים</p>
                   </div>
                   <div className="bg-gradient-to-br from-violet-100 to-purple-100 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                     <p className="text-gray-800 font-semibold">לקחת מקום ולהיות באור הזרקורים</p>
                   </div>
                   <div className="bg-gradient-to-br from-purple-100 to-pink-100 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    <p className="text-gray-800 font-semibold">לחזק את תחושת המסוגלות דרך התמודדות עם דבר חדש שמעולם לא ניסית</p>
+                    <p className="text-gray-800 font-semibold">לחזק את תחושת המסוגלות דרך התמודדות עם דבר חדש</p>
                   </div>
                 </div>
 
@@ -419,11 +427,13 @@ const App: React.FC = () => {
 
               <div className="max-w-4xl mx-auto space-y-6 text-right">
                 <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                  אחרי עשרות סדנאות מעורבות, החלטנו ליצור מרחב לנשים - כי פשוט קורה משהו מיוחד במרחב נשי בלבד. מרחב כזה שמחזק את הידיעה ש"אני לא לבד" ומאפשר שיח פתוח על נושאים שלעיתים מושתקים או מעוררים אי נוחות במרחב הכללי. במרחבים נשיים, נשים מדווחות על ירידה ברמת החרדה ועלייה בביטחון העצמי ובחופש לבטא את עצמן.
+                  אחרי עשרות סדנאות מעורבות, הבנו שקורה משהו מיוחד במרחב נשי.
+                  מרחב שמחזק את הידיעה ש"אני לא לבד" ומאפשר שיח פתוח על נושאים שלעיתים מושתקים או מעוררים אי נוחות במרחב הכללי. במרחבים נשיים, נשים מדווחות על ירידה בחרדה, עלייה בביטחון העצמי וחופש גדול יותר לבטא את עצמן.
                 </p>
 
                 <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                  מחקרים מראים שנשים נוטות לבקר את עצמן ולפקפק ביכולות שלהן יותר מגברים, ולהימנע מלקיחת סיכונים וביטוי עצמי חופשי ומשוחרר. וזה מבאס, כי אנחנו מדהימות! בואו נעבוד על זה ביחד.
+                  מחקרים מראים שנשים נוטות לבקר את עצמן יותר, לפקפק ביכולות שלהן, ולהימנע מסיכונים.
+                  וזה מבאס, כי אין סיבה! בואו נעבוד על זה ביחד.
                 </p>
               </div>
 
@@ -446,8 +456,8 @@ const App: React.FC = () => {
               </h2>
 
               <div className="space-y-6">
-                <p className="text-base sm:text-lg text-gray-700 leading-relaxed bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-                  נשים שעובדים עם ומול א.נשים. מנהלות, יזמיות, מובילות תחום, מנחות קבוצות, מנהלות משאבי אנוש או כל מי שרוצה לשפר את יכולות הביטוי העצמי, לתפוס יותר מקום במרחב ולתקשר את עצמן בביטחון גבוה.
+                <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
+                  לנשים שעובדות עם ומול א.נשים. מנהלות, יזמיות, מובילות תחום, מנחות קבוצות, מנהלות HR וכל מי שרוצה לחזק ביטוי עצמי, נוכחות ולתקשר את עצמה בביטחון.
                 </p>
 
                 <div className="bg-gradient-to-r from-purple-400 to-pink-400 rounded-2xl p-8 shadow-2xl">
@@ -474,7 +484,7 @@ const App: React.FC = () => {
                   <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
                     <div className="text-purple-400 font-bold text-xl mb-3">מפגש 1</div>
                     <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-right">
-                      היכרות ויצירת בסיס בטוח לעבודה משותפת. היכרות עם כלים בסיסיים מעולמות האימפרוביזציה וכניסה למרחב האלתור בקצב - פריסטייל ראפ. בואי לגלות את הראפרית הפנימית שלך!
+                      היכרות ויצירת בסיס בטוח לעבודה משותפת. התנסות בכלים מעולמות האימפרוביזציה וכניסה למרחב האלתור בקצב - פריסטייל ראפ. בואי לגלות את הראפרית הפנימית שלך!
                     </p>
                   </div>
                 </div>
@@ -494,7 +504,8 @@ const App: React.FC = () => {
                   <div className="bg-gradient-to-br from-violet-50 to-purple-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
                     <div className="text-violet-400 font-bold text-xl mb-3">מפגש 3</div>
                     <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-right">
-                      עבודת עומק דרך מפות Immunity to change, חשיבה שפותחה ב־Harvard University, שעוסקת בפער בין השינוי שאנחנו רוצות לבין מה שקורה בפועל, ואיך אפשר להתחיל להזיז אותו דרך תרגול והתנסות אמיתית.
+                      עבודת עומק דרך מתודולוגית ™Immunity to Change, מודל שפותח על ידי חוקרים מהרווארד,
+                      ועוסק בפער בין השינוי שאנחנו רוצות לבין מה שקורה בפועל, ואיך אפשר להתחיל להזיז אותו דרך תרגול והתנסות אמיתית.
                     </p>
                   </div>
                 </div>
@@ -546,9 +557,9 @@ const App: React.FC = () => {
                       <span className="text-gray-500 font-semibold">Iris's Photo</span>
                     </div>
                   </div>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 text-center">איריס דגני</h3>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 text-center">איריס פיינמסר</h3>
                   <p className="text-base text-gray-700 leading-relaxed text-center">
-                    ….
+                    איריס פיינמסר, VP HR ו-Executive Coach, עם רקע בפסיכולוגיה (B.A) וחינוך (M.A). מגיעה מעולמות משאבי האנוש והפיתוח הארגוני, ועובדת עם מנהלות.ים וצוותים בתהליכי צמיחה ושינוי. משלבת בעבודתה כלים חווייתיים ויישומיים לחיזוק נוכחות וביטחון.
                   </p>
                 </div>
               </div>
