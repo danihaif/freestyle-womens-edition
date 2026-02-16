@@ -568,6 +568,21 @@ const App: React.FC = () => {
           </section>
         </AnimatedSection>
 
+        <AnimatedSection delay={100}>
+          <section id="pricing" className="mb-16 lg:mb-24 scroll-mt-28">
+            <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl p-8 sm:p-10 lg:p-16 border border-white/20 text-center">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-8" style={{ fontFamily: 'Amatic SC, cursive' }}>
+                כמה זה עולה?
+              </h2>
+              <div className="max-w-3xl mx-auto space-y-4 text-gray-700 text-lg sm:text-xl leading-relaxed">
+                <p className="font-bold text-2xl sm:text-3xl text-purple-600">התהליך בעלות 1380 ש"ח.</p>
+                <p className="italic">*מחיר הרשמה מוקדמת לנרשמות עד 22/4 - 1250 ש"ח.</p>
+                <p className="text-base">*מספר המשתתפות מוגבל על מנת להבטיח מקסימום אינטימיות ומקום לכל אחת לבטא את עצמה.</p>
+              </div>
+            </div>
+          </section>
+        </AnimatedSection>
+
         {/* Final CTA Section */}
         <AnimatedSection delay={200}>
           <section className="mb-16 lg:mb-24">
