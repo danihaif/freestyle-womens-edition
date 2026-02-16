@@ -535,12 +535,11 @@ const App: React.FC = () => {
               {/* Dar Shor Bio */}
               <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl p-8 border border-white/20 hover:shadow-3xl transition-all duration-300 hover:scale-105">
                 <div className="flex flex-col items-center">
-                  <div className="relative mb-6">
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full blur-xl opacity-40"></div>
-                    <div className="relative w-40 h-40 sm:w-48 sm:h-48 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full flex items-center justify-center shadow-xl ring-4 ring-white/50">
-                      <span className="text-gray-500 font-semibold">Dar's Photo</span>
-                    </div>
-                  </div>
+                  <img
+                    src="/dar.JPG"
+                    alt="Dar Shor"
+                    className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover shadow-xl ring-4 ring-purple-200"
+                  />
                   <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 text-center">דר שור</h3>
                   <p className="text-base text-gray-700 leading-relaxed text-center">
                     עובדת סוציאלת (B.A) ומטפלת בדרמה תרפיה (M.A). עובדת עם ילדים, נוער ומבוגרים בתחומי בריאות הנפש ואוטיזם. מנחת קבוצות וסדנאות אימפרוביזציה ודינמיקה קבוצתית. משתמשת בפריסטייל ראפ ככלי לביטוי חופשי ושיפור הביטחון והזרימה שלי בחיים מאז 2021.
@@ -553,13 +552,15 @@ const App: React.FC = () => {
                 <div className="flex flex-col items-center">
                   <div className="relative mb-6">
                     <div className="absolute inset-0 bg-gradient-to-r from-pink-400 to-violet-400 rounded-full blur-xl opacity-40"></div>
-                    <div className="relative w-40 h-40 sm:w-48 sm:h-48 bg-gradient-to-br from-pink-200 to-violet-200 rounded-full flex items-center justify-center shadow-xl ring-4 ring-white/50">
-                      <span className="text-gray-500 font-semibold">Iris's Photo</span>
-                    </div>
+                    <img
+                      src="/iris.jpg"
+                      alt="Iris Feinmesser"
+                      className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full object-contain bg-white shadow-xl ring-4 ring-pink-200"
+                    />
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 text-center">איריס פיינמסר</h3>
                   <p className="text-base text-gray-700 leading-relaxed text-center">
-                    איריס פיינמסר, VP HR ו-Executive Coach, עם רקע בפסיכולוגיה (B.A) וחינוך (M.A). מגיעה מעולמות משאבי האנוש והפיתוח הארגוני, ועובדת עם מנהלות.ים וצוותים בתהליכי צמיחה ושינוי. משלבת בעבודתה כלים חווייתיים ויישומיים לחיזוק נוכחות וביטחון.
+                   VP HR ו-Executive Coach, עם רקע בפסיכולוגיה (B.A) וחינוך (M.A). מגיעה מעולמות משאבי האנוש והפיתוח הארגוני, ועובדת עם מנהלות.ים וצוותים בתהליכי צמיחה ושינוי. משלבת בעבודתה כלים חווייתיים ויישומיים לחיזוק נוכחות וביטחון.
                   </p>
                 </div>
               </div>
