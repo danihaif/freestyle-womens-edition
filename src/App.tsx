@@ -110,6 +110,31 @@ const Carousel: React.FC<{ images: string[] }> = ({ images }) => {
   );
 };
 
+const YouTubeVideo: React.FC<{ videoId: string }> = ({ videoId }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+
+  return (
+    <div ref={ref} className="relative w-full max-w-3xl h-0" style={{ paddingBottom: '56.25%' }}>
+      {inView ? (
+        <iframe
+          className="absolute top-0 left-0 w-full h-full rounded-3xl shadow-xl"
+          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1`}
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
+      ) : (
+        <div className="absolute top-0 left-0 w-full h-full bg-black rounded-3xl flex items-center justify-center" />
+      )}
+    </div>
+  );
+};
+
 const App: React.FC = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
@@ -654,17 +679,7 @@ const App: React.FC = () => {
         <AnimatedSection delay={200}>
           <section className="mb-16 lg:mb-24">
             <div className="mt-10 flex justify-center">
-              <div className="relative w-full max-w-3xl h-0" style={{ paddingBottom: '56.25%' }}> {/* 16:9 aspect ratio */}
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full rounded-3xl shadow-xl"
-                  src="https://www.youtube.com/embed/n4dCdtJkZLg"
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                ></iframe>
-              </div>
+              <YouTubeVideo videoId="n4dCdtJkZLg" />
             </div>
           </section>
         </AnimatedSection>
