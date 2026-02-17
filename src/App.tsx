@@ -325,7 +325,7 @@ const App: React.FC = () => {
 
               {/* Subtitle */}
               <p className="text-2xl sm:text-3xl font-extrabold text-white mb-8 animate-pulse drop-shadow-[0_0_15px_rgba(255,255,255,0.8)] bg-gradient-to-r from-pink-400/30 to-violet-400/30 backdrop-blur-sm rounded-2xl py-4 px-6 inline-block border-2 border-white/40">
-                לחצו והצטרפו אלינו!
+               צרי איתנו קשר!
               </p>
 
               {/* Social Icons */}
