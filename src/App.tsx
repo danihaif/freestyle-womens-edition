@@ -677,7 +677,7 @@ const App: React.FC = () => {
               </h2>
               <div className="max-w-3xl mx-auto space-y-4 text-gray-700 text-lg sm:text-xl leading-relaxed">
                 <p className="font-bold text-2xl sm:text-3xl text-purple-600">התהליך בעלות 1380 ש"ח.</p>
-                <p className="italic">*מחיר הרשמה מוקדמת לנרשמות עד 22/4 - 1250 ש"ח.</p>
+                <p className="italic">*מחיר הרשמה מוקדמת לנרשמות עד 22/3 - 1250 ש"ח.</p>
                 <p className="text-base">*מספר המשתתפות מוגבל על מנת להבטיח מקסימום אינטימיות ומקום לכל אחת לבטא את עצמה.</p>
               </div>
             </div>
