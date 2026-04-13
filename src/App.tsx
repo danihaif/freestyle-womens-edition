@@ -397,7 +397,7 @@ const App: React.FC = () => {
                 <div className="text-white space-y-3 text-base sm:text-lg font-semibold">
                   <p className="flex items-center justify-center gap-2">
                     <span className="text-pink-300">📅</span>
-                    12.4 | 19.4 | 26.4 | 3.5
+                    17.5 | 24.5 | 31.5 | 7.6
                   </p>
                   <p className="flex items-center justify-center gap-2">
                     <span className="text-pink-300">⏰</span>
@@ -639,7 +639,7 @@ const App: React.FC = () => {
                   />
                   <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 text-center">דר שור</h3>
                   <p className="text-base text-gray-700 leading-relaxed text-center">
-                    עובדת סוציאלת (B.A) ומטפלת בדרמה תרפיה (M.A). עובדת עם ילדים, נוער ומבוגרים בתחומי בריאות הנפש. מנחת קבוצות וסדנאות אימפרוביזציה ביטוי חופשי ודינמיקה קבוצתית. משתמשת בפריסטייל ראפ ככלי לביטוי חופשי ושיפור הביטחון והזרימה שלי בחיים מאז 2021.
+                    עובדת סוציאלת (B.A) ומטפלת בדרמה תרפיה (M.A). עובדת עם ילדים, נוער ומבוגרים בתחומי בריאות הנפש. מנחת קבוצות וסדנאות אימפרוביזציה, ביטוי חופשי ודינמיקה קבוצתית, משתמשת בפריסטייל ראפ ככלי לביטוי חופשי ושיפור הביטחון והזרימה שלי בחיים מאז 2021.
                   </p>
                 </div>
               </div>
@@ -691,8 +691,7 @@ const App: React.FC = () => {
                 כמה זה עולה?
               </h2>
               <div className="max-w-3xl mx-auto space-y-4 text-gray-700 text-lg sm:text-xl leading-relaxed">
-                <p className="font-bold text-2xl sm:text-3xl text-purple-600">התהליך בעלות 1380 ש"ח.</p>
-                <p className="italic">*מחיר הרשמה מוקדמת לנרשמות עד 22/3 - 1250 ש"ח.</p>
+                <p className="font-bold text-2xl sm:text-3xl text-purple-600">התהליך בעלות 1280 ש"ח.</p>
                 <p className="text-base">*מספר המשתתפות מוגבל על מנת להבטיח מקסימום אינטימיות ומקום לכל אחת לבטא את עצמה.</p>
               </div>
             </div>
